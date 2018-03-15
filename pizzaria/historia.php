@@ -31,7 +31,7 @@
                         <img title="galeria" alt="galeria" src="cms/<?php echo($rsGaleria['img1']) ?>">
                     </div>
                     <div class="thumbs">
-                        <img title="galeria" alt="galeria" class="active" src="cms/<?php echo($rsGaleria['img1']) ?>">
+                          <img title="galeria" alt="galeria" class="active" src="cms/<?php echo($rsGaleria['img1']) ?>">
                         <img title="galeria" alt="galeria" class="gallery" src="cms/<?php echo($rsGaleria['img2']) ?>">
                         <img title="galeria" alt="galeria" class="gallery" src="cms/<?php echo($rsGaleria['img3']) ?>">
                         <img title="galeria" alt="galeria" class="gallery" src="cms/<?php echo($rsGaleria['img4']) ?>">
