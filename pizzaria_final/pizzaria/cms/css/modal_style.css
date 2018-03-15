@@ -1,0 +1,49 @@
+#cadastra{
+    width: 500px;
+    min-height: 300px;
+    height: auto;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    border: solid 1px #000;
+    border-radius: 10px 10px;
+    box-shadow: 5px -9px 3px #333;
+    padding: 16px;
+    font-family: verdana;
+    text-align: center;
+    color: #fff;
+    background-image: url(../imagens/pz.jpg);
+}
+
+h1{
+    background-color: #000;
+}
+
+input{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    font-family: verdana;
+    border: none;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    margin-bottom: 8px;
+}
+
+#btn_modal{
+    background: rgba(0,0,0,0.7);
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 20px;
+    color: #fff;
+}
+
+#cadastra h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-align: right;
+    margin-left: 100px;
+    margin-top: -20px;
+    cursor: pointer;
+}

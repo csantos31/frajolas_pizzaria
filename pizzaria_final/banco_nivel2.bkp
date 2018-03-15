@@ -1,0 +1,527 @@
+-- MySQL dump 10.13  Distrib 5.6.26, for Win64 (x86_64)
+--
+-- Host: localhost    Database: dbfrajola
+-- ------------------------------------------------------
+-- Server version	5.6.26-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tbl_nivel_de_usuario`
+--
+
+DROP TABLE IF EXISTS `tbl_nivel_de_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_nivel_de_usuario` (
+  `id_nivel` int(11) NOT NULL AUTO_INCREMENT,
+  `nivel` varchar(20) DEFAULT NULL,
+  `descricao` text,
+  PRIMARY KEY (`id_nivel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_nivel_de_usuario`
+--
+
+LOCK TABLES `tbl_nivel_de_usuario` WRITE;
+/*!40000 ALTER TABLE `tbl_nivel_de_usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_nivel_de_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_usuario`
+--
+
+DROP TABLE IF EXISTS `tbl_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_usuario` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `celular` varchar(20) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `sexo` char(1) DEFAULT NULL,
+  `dt_nasc_user` date DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `senha` varchar(20) DEFAULT NULL,
+  `id_nivel` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `id_fk_nivel` (`id_nivel`),
+  CONSTRAINT `id_fk_nivel` FOREIGN KEY (`id_nivel`) REFERENCES `tbl_nivel_de_usuario` (`id_nivel`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_usuario`
+--
+
+LOCK TABLES `tbl_usuario` WRITE;
+/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
+INSERT INTO `tbl_usuario` VALUES (12,'joaozinhi','1212121','221321','lllll','m',NULL,'joao','abc',NULL),(13,'mateuzinho','212121','132121','lllll','m',NULL,'mateus','123',NULL),(14,'michelzinho','41212','12121','l5llll','m',NULL,'michel','def',NULL),(15,'gabrielzinho','5211212','212121','llll','m',NULL,'gabriel','456',NULL),(16,'cyntia','14524465','545454','baahshag@ghg','F',NULL,'cyntia','123',NULL);
+/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblcategoria`
+--
+
+DROP TABLE IF EXISTS `tblcategoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblcategoria` (
+  `idCategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  PRIMARY KEY (`idCategoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=764 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblcategoria`
+--
+
+LOCK TABLES `tblcategoria` WRITE;
+/*!40000 ALTER TABLE `tblcategoria` DISABLE KEYS */;
+INSERT INTO `tblcategoria` VALUES (1,'salgada'),(761,'doce '),(762,'especiais'),(763,'veganas');
+/*!40000 ALTER TABLE `tblcategoria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbldecada`
+--
+
+DROP TABLE IF EXISTS `tbldecada`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbldecada` (
+  `idDecada` int(11) NOT NULL AUTO_INCREMENT,
+  `tituloDecada` varchar(100) NOT NULL,
+  `textoDecada` text NOT NULL,
+  PRIMARY KEY (`idDecada`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbldecada`
+--
+
+LOCK TABLES `tbldecada` WRITE;
+/*!40000 ALTER TABLE `tbldecada` DISABLE KEYS */;
+INSERT INTO `tbldecada` VALUES (6,'Anos 60','Marcados por movimentos sociais importantes para muitas conquistas atuais, tais como feminismo, movimentos antirracistas e o direito do jovem ser como ele é!\r\nA rebeldia nos anos sessenta era uma espécie de luta contra o sistema já imposto a todas as pessoas daquela época, as pessoas começavam a se cansar do conservadorismo comum das pessoas que estavam “no poder”.\r\nNa música The Beatles começou a fazer muito sucesso, e criou-se uma espécie de mensagem as vezes subliminar e as vezes declarada contra o sistema na música e na arte. Isso resultou em assassinatos, torturas e ameaças para diversas pessoas e é claro, isso aumentou o desejo de justiça dos jovens daquela época.\r\n'),(7,'Anos 70','A década de setenta foi marcada pelo comportamento rebelde de muitos jovens e adolescentes, o lema da época era “sexo, drogas e rock and roll”, a indústria passou a ver os jovens como consumidores em potencial, foi como se o comércio e a mídia daquele tempo fosse em prol destes, para chamar a atenção dos adolescentes e fazê-los consumir.\r\nO cinema se tornou barato e popular e os filmes eram quase sempre histórias que mostrava o quão rebeldes e ativos os adolescentes americanos eram, logo, esse estilo de vida chamou a atenção em diversos lugares no mundo, e no Brasil não poderia ser diferente.\r\n'),(8,'Anos 80','No Brasil principalmente, os anos 80 foram marcados pela política e pela transformação do rock com o punk.\r\nO pop passou a ser tão conhecido como o rock, estrelas como Michael Jackson e Madonna criavam e ditavam moda mundo a fora. \r\nEssa década ficou conhecida por cores fortes, tons de rosa, vermelho, laranja, verde e neon.\r\nA mídia dessa vez, criou um conceito de “geração saúde” e Madonna teve muito a ver com isso, nesse conceito a moda era ser saudável, comer e se vestir bem. Roupas esportivas começam então a entrar no cenário da moda.\r\nA tecnologia passa a ter muito impacto sobre as pessoas e a globalização começa a dar passos mais rápidos a fins de se tornar o que é hoje.\r\n'),(9,'Conclusão','Estas três décadas foram marcadas por ambientes políticos conturbados, jovens rebeldes e interessados, participativos no cenário da própria política e economia, a arte se tornou um “bem” acessível para todos, a globalização encurtou distâncias de um modo surpreendente para quem assistia e vivia tudo isso.\r\nNa música houve o grande impacto do rock nacional e internacional, a jovem guarda (muitos dos artistas da jovem guarda foram exilados por muitos anos por causa da ditadura militar, como por exemplo Gilberto Gil), o surgimento e a explosão do Pop e isso tudo direta ou indiretamente mudou completamente o cenário da arte, da política, da música e da juventude social ao longo daqueles anos.\r\n');
+/*!40000 ALTER TABLE `tbldecada` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblendereco`
+--
+
+DROP TABLE IF EXISTS `tblendereco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblendereco` (
+  `idEndereco` int(11) NOT NULL AUTO_INCREMENT,
+  `idEstado` int(11) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
+  `logradouro` varchar(100) NOT NULL,
+  `numero` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`idEndereco`),
+  KEY `fk_estado` (`idEstado`),
+  CONSTRAINT `fk_estado` FOREIGN KEY (`idEstado`) REFERENCES `tblestado` (`idEstado`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblendereco`
+--
+
+LOCK TABLES `tblendereco` WRITE;
+/*!40000 ALTER TABLE `tblendereco` DISABLE KEYS */;
+INSERT INTO `tblendereco` VALUES (1,1,'Jandira','Jardin das rosas','54');
+/*!40000 ALTER TABLE `tblendereco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblestado`
+--
+
+DROP TABLE IF EXISTS `tblestado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblestado` (
+  `idEstado` int(11) NOT NULL AUTO_INCREMENT,
+  `estado` varchar(30) NOT NULL,
+  `sigla` varchar(5) NOT NULL,
+  PRIMARY KEY (`idEstado`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblestado`
+--
+
+LOCK TABLES `tblestado` WRITE;
+/*!40000 ALTER TABLE `tblestado` DISABLE KEYS */;
+INSERT INTO `tblestado` VALUES (1,'São Paulo','SP');
+/*!40000 ALTER TABLE `tblestado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblfaleconosco`
+--
+
+DROP TABLE IF EXISTS `tblfaleconosco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblfaleconosco` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `telefone` varchar(50) DEFAULT NULL,
+  `celular` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `homepage` varchar(255) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `sugestao` text,
+  `informacaoproduto` text,
+  `profissao` varchar(50) DEFAULT NULL,
+  `sexo` char(1) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblfaleconosco`
+--
+
+LOCK TABLES `tblfaleconosco` WRITE;
+/*!40000 ALTER TABLE `tblfaleconosco` DISABLE KEYS */;
+INSERT INTO `tblfaleconosco` VALUES (1,'Cyntia','1147858','1785888','hxhcneu@zhcnhdcn','Www.djchjdjxncj','Jsusnwjdnfj..xhjcnrjf','Testando responsivo','Apenas teste','Programadora','f');
+/*!40000 ALTER TABLE `tblfaleconosco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblhistoria`
+--
+
+DROP TABLE IF EXISTS `tblhistoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblhistoria` (
+  `idHistoria` int(11) NOT NULL AUTO_INCREMENT,
+  `nomePagina` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idHistoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblhistoria`
+--
+
+LOCK TABLES `tblhistoria` WRITE;
+/*!40000 ALTER TABLE `tblhistoria` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tblhistoria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblhome`
+--
+
+DROP TABLE IF EXISTS `tblhome`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblhome` (
+  `idHome` int(11) NOT NULL AUTO_INCREMENT,
+  `texto` text,
+  `imgSlide1` text,
+  `imgSlide2` text,
+  `imgSlide3` text,
+  `status` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`idHome`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblhome`
+--
+
+LOCK TABLES `tblhome` WRITE;
+/*!40000 ALTER TABLE `tblhome` DISABLE KEYS */;
+INSERT INTO `tblhome` VALUES (1,'Santa pizza de cada dia','arquivos/6d4cfd54e467ff0761d5772109f19c85.jpg','arquivos/aea9f95e0e941e585a4017eadddc3939.jpg','arquivos/06b922f5d3de94b1c611869c6d80f060.jpg',1);
+/*!40000 ALTER TABLE `tblhome` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblimghistoria`
+--
+
+DROP TABLE IF EXISTS `tblimghistoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblimghistoria` (
+  `idImgHistoria` int(11) NOT NULL AUTO_INCREMENT,
+  `img1` text,
+  `img2` text,
+  `img3` text,
+  `img4` text,
+  `img5` text,
+  `img6` text,
+  `img7` text,
+  `img8` text,
+  `img9` text,
+  `idHistoria` int(11) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`idImgHistoria`),
+  KEY `fk_id_hist` (`idHistoria`),
+  CONSTRAINT `fk_id_hist` FOREIGN KEY (`idHistoria`) REFERENCES `tblhistoria` (`idHistoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblimghistoria`
+--
+
+LOCK TABLES `tblimghistoria` WRITE;
+/*!40000 ALTER TABLE `tblimghistoria` DISABLE KEYS */;
+INSERT INTO `tblimghistoria` VALUES (6,'arquivos/6d4cfd54e467ff0761d5772109f19c85.jpg','arquivos/06b922f5d3de94b1c611869c6d80f060.jpg','arquivos/741a92b2f6aa623d4b15be322bccc077.jpg','arquivos/57ffc2a8786ce2bcf29cd50b93eb3099.jpg','arquivos/94da5fdf2dc2a2e41b4331bd83b38488.jpg','arquivos/491a4a800025e423fbf1781c2c8ebce7.jpg','arquivos/491a4a800025e423fbf1781c2c8ebce7.jpg','arquivos/aea9f95e0e941e585a4017eadddc3939.jpg','arquivos/57ffc2a8786ce2bcf29cd50b93eb3099.jpg',NULL,1);
+/*!40000 ALTER TABLE `tblimghistoria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblingrediente`
+--
+
+DROP TABLE IF EXISTS `tblingrediente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblingrediente` (
+  `idIngrediente` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  PRIMARY KEY (`idIngrediente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblingrediente`
+--
+
+LOCK TABLES `tblingrediente` WRITE;
+/*!40000 ALTER TABLE `tblingrediente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tblingrediente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblproduto`
+--
+
+DROP TABLE IF EXISTS `tblproduto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblproduto` (
+  `idProduto` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `fotoProduto` text,
+  `preco` decimal(7,2) DEFAULT NULL,
+  `descricao` text,
+  `pizzaMes` tinyint(1) DEFAULT NULL,
+  `idSubcategoria` int(11) NOT NULL,
+  `ativo` tinyint(4) NOT NULL,
+  PRIMARY KEY (`idProduto`),
+  KEY `fk_subcategoria_idx` (`idSubcategoria`),
+  CONSTRAINT `fk_subcategoria` FOREIGN KEY (`idSubcategoria`) REFERENCES `tblsubcategoria` (`idSubcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblproduto`
+--
+
+LOCK TABLES `tblproduto` WRITE;
+/*!40000 ALTER TABLE `tblproduto` DISABLE KEYS */;
+INSERT INTO `tblproduto` VALUES (4,'Pizza de calabresa','arquivos/pizza1.jpg',28.00,'Pizza de calabresa, a pizza mais bonita da cidade',0,1,1),(5,'Pizza de camarão','arquivos/pizza2.jpg',32.00,'Pizza da alegria',0,2,1),(6,'Pizza Parmesiana','arquivos/pizza3.jpg',22.00,'Pizza dos inteligentes',0,3,1),(7,'Pizza de Cathupiryyyy','arquivos/pizza2.jpg',35.00,'Pizza do restart',0,4,1),(8,'Pizza do michel','arquivos/pizza3.jpg',35.00,'Pizza feliz',0,5,1),(9,'Pizza da camilita','arquivos/pizza4.jpg',35.00,'Pizza Havana',1,6,1),(10,'Pizza do joaozinho','arquivos/pizza1.jpg',35.00,'Piza haha',0,1,1);
+/*!40000 ALTER TABLE `tblproduto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblproduto_clique`
+--
+
+DROP TABLE IF EXISTS `tblproduto_clique`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblproduto_clique` (
+  `idProduto_clique` int(11) NOT NULL AUTO_INCREMENT,
+  `idProduto` int(11) NOT NULL,
+  `clique` tinyint(4) NOT NULL,
+  PRIMARY KEY (`idProduto_clique`),
+  KEY `fk_produto_clique_idx` (`idProduto`),
+  CONSTRAINT `fk_produto_clique` FOREIGN KEY (`idProduto`) REFERENCES `tblproduto` (`idProduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblproduto_clique`
+--
+
+LOCK TABLES `tblproduto_clique` WRITE;
+/*!40000 ALTER TABLE `tblproduto_clique` DISABLE KEYS */;
+INSERT INTO `tblproduto_clique` VALUES (2,4,1),(3,6,1),(4,9,1),(5,5,1),(6,7,1),(7,10,1),(8,9,1),(9,9,1),(10,9,1),(11,9,1),(12,8,1),(13,10,1),(14,10,1),(15,7,1),(16,8,1),(17,6,1),(18,6,1),(19,6,1),(20,6,1),(21,6,1),(22,7,1);
+/*!40000 ALTER TABLE `tblproduto_clique` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblprodutoingrediente`
+--
+
+DROP TABLE IF EXISTS `tblprodutoingrediente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblprodutoingrediente` (
+  `idProdutoIngrediente` int(11) NOT NULL AUTO_INCREMENT,
+  `idIngrediente` int(11) NOT NULL,
+  `idProduto` int(11) NOT NULL,
+  PRIMARY KEY (`idProdutoIngrediente`),
+  KEY `fk_produtO` (`idProduto`),
+  KEY `fk_ingrediente` (`idIngrediente`),
+  CONSTRAINT `fk_ingrediente` FOREIGN KEY (`idIngrediente`) REFERENCES `tblingrediente` (`idIngrediente`),
+  CONSTRAINT `fk_produtO` FOREIGN KEY (`idProduto`) REFERENCES `tblproduto` (`idProduto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblprodutoingrediente`
+--
+
+LOCK TABLES `tblprodutoingrediente` WRITE;
+/*!40000 ALTER TABLE `tblprodutoingrediente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tblprodutoingrediente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblpromocao`
+--
+
+DROP TABLE IF EXISTS `tblpromocao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblpromocao` (
+  `idPromocao` int(11) NOT NULL AUTO_INCREMENT,
+  `desconto` decimal(7,2) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `descricao` text NOT NULL,
+  `idProduto` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idPromocao`),
+  KEY `fkproduto_promocao_idx` (`idProduto`),
+  CONSTRAINT `fkproduto_promocao` FOREIGN KEY (`idProduto`) REFERENCES `tblproduto` (`idProduto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblpromocao`
+--
+
+LOCK TABLES `tblpromocao` WRITE;
+/*!40000 ALTER TABLE `tblpromocao` DISABLE KEYS */;
+INSERT INTO `tblpromocao` VALUES (1,20.00,'promoção para responsivo','sei la, to testando',7),(2,30.00,'Minha pizza favorita','não aguento mais pensar, to pensando seriamente em vender minha arte na praia ',4),(3,10.00,'Anything','Sei la essa droga de descrição',9);
+/*!40000 ALTER TABLE `tblpromocao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblsobrenos`
+--
+
+DROP TABLE IF EXISTS `tblsobrenos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblsobrenos` (
+  `idSobreNos` int(11) NOT NULL AUTO_INCREMENT,
+  `imagem` text,
+  `tituloPrincipal` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idSobreNos`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblsobrenos`
+--
+
+LOCK TABLES `tblsobrenos` WRITE;
+/*!40000 ALTER TABLE `tblsobrenos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tblsobrenos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblsubcategoria`
+--
+
+DROP TABLE IF EXISTS `tblsubcategoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblsubcategoria` (
+  `idSubcategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `idCategoria` int(11) NOT NULL,
+  PRIMARY KEY (`idSubcategoria`),
+  KEY `fk_categoria_idx` (`idCategoria`),
+  CONSTRAINT `fk_categoria` FOREIGN KEY (`idCategoria`) REFERENCES `tblcategoria` (`idCategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblsubcategoria`
+--
+
+LOCK TABLES `tblsubcategoria` WRITE;
+/*!40000 ALTER TABLE `tblsubcategoria` DISABLE KEYS */;
+INSERT INTO `tblsubcategoria` VALUES (1,'brotinho',1),(2,'grande',761),(3,'pequena',762),(4,'media',763),(5,'infantil',761),(6,'pizza do aladin',762);
+/*!40000 ALTER TABLE `tblsubcategoria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tblunidade`
+--
+
+DROP TABLE IF EXISTS `tblunidade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tblunidade` (
+  `idUnidade` int(11) NOT NULL AUTO_INCREMENT,
+  `unidade` varchar(100) NOT NULL,
+  `descricao` text NOT NULL,
+  `idEndereco` int(11) NOT NULL,
+  PRIMARY KEY (`idUnidade`),
+  KEY `fk_endereco` (`idEndereco`),
+  CONSTRAINT `fk_endereco` FOREIGN KEY (`idEndereco`) REFERENCES `tblendereco` (`idEndereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tblunidade`
+--
+
+LOCK TABLES `tblunidade` WRITE;
+/*!40000 ALTER TABLE `tblunidade` DISABLE KEYS */;
+INSERT INTO `tblunidade` VALUES (7,'Unidade Itapevi','Estas três décadas foram marcadas por ambientes políticos conturbados, jovens rebeldes e interessados, participativos no cenário da própria política e economia, a arte se tornou um “bem” acessível para todos, a globalização encurtou distâncias de um modo surpreendente para quem assistia e vivia tudo isso.\r\nNa música houve o grande impacto do rock nacional e internacional, a jovem guarda (muitos dos artistas da jovem guarda foram exilados por muitos anos por causa da ditadura militar, como por exemplo Gilberto Gil), o surgimento e a explosão do Pop e isso tudo direta ou indiretamente mudou completamente o cenário da arte, da política, da música e da juventude social ao longo daqueles anos.\r\n',1);
+/*!40000 ALTER TABLE `tblunidade` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-12-12  0:29:05
