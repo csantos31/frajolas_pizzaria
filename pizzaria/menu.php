@@ -1,35 +1,46 @@
-<?php 
-    $conexao=mysqli_connect('localhost','root','bcd127');
-    mysqli_select_db($conexao,'dbfrajola');
+<?php
+
+//refactoring code to php version 7 **** before it was 5
+//    $conexao=mysqli_connect('localhost','root','bcd127');
+  //  mysqli_select_db($conexao,'dbfrajola');
+
+  $conexao = mysqli_connect("localhost", "root", "bcd127", "dbfrajola");
+
+  if (!$conexao) {
+      echo "Error: Unable to connect to MySQL." . PHP_EOL;
+      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+      exit;
+  }
 
     if(isset($_POST['btnLogin']))
     {
         $login = $_POST['txtUser'];
         $senha = $_POST['txtSenha'];
-        
+
         addslashes($sql = "SELECT * FROM tbl_usuario WHERE username = '$login' AND senha = '$senha';");
-        
+
         echo($sql);
-                
+
         $verifica = mysqli_query($conexao,$sql) or die ("Erro ao selecionar");
-        
-        
+
+
         if(mysqli_num_rows($verifica)<=0)
          {
              echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos'); window.location.href='index.php'; </script>";
              die();
          }else{
-            
-            session_start(); 
+
+            session_start();
             $rs = mysqli_fetch_array($verifica);
-             
+
             $_SESSION['usuario'] = $rs['username'];
             $_SESSION['nome'] = $rs['nome'];
-            
+
             header("location: cms/gerenciamento_fale_conosco.php");
-            
-         } 
-                                 
+
+         }
+
     }
 ?>
 
@@ -88,7 +99,4 @@
                 </ul>
             </nav>
         </div>
-</header>    
-    
-
-
+</header>
