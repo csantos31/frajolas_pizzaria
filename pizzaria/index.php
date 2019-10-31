@@ -2,7 +2,7 @@
     session_write_close();
     include('cms/conect.php');
 
-$busca = "SELECT * FROM tblproduto WHERE idProduto > 0";
+    $busca = "SELECT * FROM tblproduto WHERE idProduto > 0";
 
     if(isset($_GET['buscarPor'])){
         $idSub = $_GET['buscarPor'];
@@ -15,8 +15,6 @@ $busca = "SELECT * FROM tblproduto WHERE idProduto > 0";
     }else{
         $busca = $busca . " ORDER BY RAND()";
     }
-
-
 ?>
 
 <!DOCTYPE html>

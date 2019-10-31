@@ -1,4 +1,17 @@
+.inpt{
+  padding: 4px;
+  width: 150px;
+  background: #FFFFFF !important;
+}
 
+.btcy{
+  background-color: #FFF;
+  padding: 5px;
+}
+
+h1{
+  margin-top: 130px;
+}
 
 @media screen and (max-device-width:780px) {
     #apoio{
@@ -21,7 +34,7 @@
     }
 
     header{
-        background-color:#2f2f2f;
+        /*background-color:#2f2f2f;*/
         font-weight: 600;
         width:100%;
         margin-left: auto;
@@ -41,7 +54,6 @@
     }
 
     header label:hover{
-        background-color:#ff5900;
     }
 
     #menu ul{
@@ -51,7 +63,7 @@
         display: flex;
         justify-content: center;
         position: absolute;
-        background-color:#2f2f2f;
+        /*background-color:#2f2f2f;*/
         width:70%;
         flex-direction: column;
         margin-left: -70%;
@@ -68,7 +80,7 @@
     }
 
     #menu li a:hover{
-        background-color:#ff5900;
+        /*background-color:#ff5900;*/
         border-top:1px solid #efefef;
     }
 
@@ -121,7 +133,6 @@
         margin-left: auto;
         margin-right: auto;
         height: 90px;
-        background-color: #AA3926 ;
         color:  #F6AE47  ;
         text-align: center;
         font-weight: bold;
@@ -134,7 +145,6 @@
         width: 100%;
         min-height: 90px;
         overflow: hidden;
-        background-color: #AA3926 ;
         color:  #F6AE47  ;
         text-align: center;
         font-weight: bold;
@@ -149,7 +159,6 @@
         height: auto;
         margin-top: 20px;
         float: left;
-        background-color: #8B0000;
     }
 
     .teste_item{
@@ -219,7 +228,7 @@
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        background-image: url(../imagens/i1.jpg);
+      /*  background-image: url(../imagens/i1.jpg);*/
     }
 
     .up_produto img{
@@ -257,7 +266,7 @@
         width: 20%;
         height: 20%;
         float: left;
-        background-image: url(../imagens/search.png);
+        /*background-image: url(../imagens/search.png);*/
     }
 
     .subCat{
@@ -290,7 +299,7 @@
     #pagina_modal{
         width: 100%;
         height: 100%;
-        background-image: url(../imagens/bgpi.jpg);
+        /*background-image: url(../imagens/bgpi.jpg);*/
         background-attachment: fixed;
         padding-top: 50px;
         display: none;
@@ -299,7 +308,7 @@
     #pagina_modall{
         width: 100%;
         height: 100%;
-        background-image: url(../imagens/bgpi.jpg);
+        /*background-image: url(../imagens/bgpi.jpg);*/
         background-attachment: fixed;
         padding-top: 30px;
     }
@@ -386,7 +395,7 @@
         width: auto;
         height: 50px;
         border-radius: 10px 0px 10px 0px;
-        background-color: #D3D3D3;
+        /*background-color: #D3D3D3;*/
     }
 
 
@@ -395,7 +404,7 @@
     footer{
         width: 100%;
         height: 80px;;
-        background-color: #8B0000;
+        /*background-color: #8B0000;*/
         bottom: 0px;
         margin-left: auto;
         margin-right: auto;
@@ -432,7 +441,7 @@
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        background-image: url(../imagens/i1.jpg);
+        /*background-image: url(../imagens/i1.jpg);*/
     }
 
     .up_produto_promo img{
@@ -447,7 +456,7 @@
         margin-right: auto;
         margin-left: auto;
         padding-left: 10px;
-        background-color: #F8efed;
+        /*background-color: #F8efed;*/
         /*background-color: #bd5504;*/
         text-align: left;
         font-family: serif;
@@ -476,9 +485,10 @@
         height: auto;
         margin-left: 10%;
         padding: 100px;
-        background-color: #fffdf9;
+        /*background-color: #fffdf9;*/
         border-right: solid 2px #000;
         border-bottom: solid 2px #000;
+        padding-top: 300px !important;
     }
 
     #caixa_form h1{
@@ -511,7 +521,7 @@
     .entrada{
         width: 330px;
         height: 35px;
-        background-color: #fffdfc;
+        /*background-color: #fffdfc;*/
         border: 0px;
         border-right: solid 3px #f2f2f2;
         border-bottom: solid 3px #f2f2f2;
@@ -520,7 +530,7 @@
     .textarea{
         width: 400px;
         height: 80px;
-        background-color: #fffdfc;
+        /*background-color: #fffdfc;*/
         border: 0px;
         border-right: solid 3px #f2f2f2;
         border-bottom: solid 3px #f2f2f2;
@@ -528,10 +538,10 @@
 
     #bt1{
         width: 300px;
-        height: 50px;
-        margin-top: 30px;
+        height: 40px;
+        margin-top: 5px;
         margin-bottom: 30px;
-        background-color: #A9A9A9;
+        /*background-color: #A9A9A9;*/
     }
 
 
@@ -597,7 +607,7 @@
         min-height: 1200px;
         height: auto;
         background-color: #ffffff;
-        background-image: url(../imagens/teste2.jpg);
+        /*background-image: url(../imagens/teste2.jpg);*/
         background-attachment: fixed;
         background-size: cover;
     }
@@ -632,10 +642,11 @@
     }
 
     #transp{
-        opacity: 0.5;
-        background-color: #710000;
+        opacity: 0.8;
+        /*background-color: #710000;*/
         width: 100%;
-        height: 150px;
+        height: 130px;
+        background: #E2D5C4;
     }
 
     #apoio{
@@ -659,6 +670,7 @@
         height: 100px;
         border: solid 1px black;
         float: left;
+        margin-top: 20px;
     }
 
     #lg{
@@ -693,7 +705,7 @@
         text-decoration: none;
         font-size: 20px;
         font-weight: 900;
-        color: #FFFF00;
+        color: #000;
     }
 
     #login{
@@ -709,11 +721,10 @@
         width: 1160px;
         padding: 20px;
         min-height: 100px;
-        background-color: #F8efed;
+        /*background-color: #F8efed;*/
         height: auto;
         margin-left: auto;
         margin-right: auto;
-
     }
 
     #container_redes_sociais{
@@ -727,7 +738,7 @@
     .rede_social{
         width: 180px;
         height: 150px;
-        background-color: #FFB6C1;
+        /*background-color: #FFB6C1;*/
         margin-top: 20px;
     }
 
@@ -800,7 +811,7 @@
         width: 1160px;
         height: 150px;
         margin-top: 20px;
-        background-color: #AA3926 ;
+        /*background-color: #AA3926 ;*/
         color:  #F6AE47  ;
         text-align: center;
         font-weight: bold;
@@ -813,7 +824,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 30px;
-        background-color: #FFB6C1;
+        /*background-color: #FFB6C1;*/
         color: #FF0000;
         text-align: center;
         font-weight: bold;
@@ -827,7 +838,7 @@
         height: auto;
         margin-top: 20px;
         float: left;
-        background-color: #8B0000;
+        /*background-color: #8B0000;*/
     }
 
     .teste_item{
@@ -888,7 +899,7 @@
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        background-image: url(../imagens/i1.jpg);
+        /*background-image: url(../imagens/i1.jpg);*/
     }
 
     .up_produto img{
@@ -903,7 +914,7 @@
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        background-image: url(../imagens/i2.jpg);
+        /*background-image: url(../imagens/i2.jpg);*/
     }
 
     .down_produto{
@@ -913,7 +924,6 @@
         margin-right: auto;
         margin-left: auto;
         padding-left: 10px;
-        background-color: #F8efed;
         /*background-color: #bd5504;*/
         text-align: center;
         font-family: serif;
@@ -927,7 +937,6 @@
         margin-right: auto;
         margin-left: auto;
         padding-left: 10px;
-        background-color: #F8efed;
         /*background-color: #bd5504;*/
         text-align: left;
         font-family: serif;
@@ -940,7 +949,6 @@
         margin-top: 10px;
         text-align: right;
         padding-right: 5px;
-        background-color: crimson;
     }
 
     /*HISTÓRIA*/
@@ -949,6 +957,7 @@
         overflow: hidden;
         height: auto;
         background-color:white;
+        margin-top: 100px;
     }
 
     #superior_historia img{
@@ -961,7 +970,6 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 25px;
-        background-color: black;
     }
 
     .cover img{
@@ -986,7 +994,6 @@
     }
 
     .thumbs{
-        background-color: black;
         float: left;
         width: 100%;
         overflow: hidden;
@@ -1017,7 +1024,6 @@
         width: auto;
         height: 50px;
         border-radius: 10px 0px 10px 0px;
-        background-color: #D3D3D3;
     }
 
     .titulo_anos h2{
@@ -1038,7 +1044,6 @@
     footer{
         width: 1200px;
         height: 80px;;
-        background-color: #8B0000;
         bottom: 0px;
         margin-left: auto;
         margin-right: auto;
@@ -1063,9 +1068,9 @@
         height: 1025px;;
         margin-left: auto;
         margin-right: auto;
-        background-color: #fffdf9;
         border-right: solid 2px #000;
         border-bottom: solid 2px #000;
+        padding-top: 90px !important;
     }
 
     #caixa_form h1{
@@ -1099,7 +1104,6 @@
     .entrada{
         width: 330px;
         height: 35px;
-        background-color: #fffdfc;
         border: 0px;
         border-right: solid 3px #f2f2f2;
         border-bottom: solid 3px #f2f2f2;
@@ -1108,7 +1112,6 @@
     .textarea{
         width: 400px;
         height: 80px;
-        background-color: #fffdfc;
         border: 0px;
         border-right: solid 3px #f2f2f2;
         border-bottom: solid 3px #f2f2f2;
@@ -1116,10 +1119,9 @@
 
     #bt1{
         width: 300px;
-        height: 50px;
-        margin-top: 30px;
+        height: 30px;
+        margin-top: 5px;
         margin-left: 400px;
-        background-color: #A9A9A9;
     }
 
 
@@ -1175,7 +1177,6 @@
         width: auto;
         height: 50px;
         border-radius: 10px 0px 10px 0px;
-        background-color: #D3D3D3;
     }
 
     .titulo_sobre:hover{
@@ -1272,7 +1273,6 @@
     #modal_produto{
         width: 100%;
         height: 100%;
-        background-color: #000;
     }
 
     #img_busca{
@@ -1281,7 +1281,7 @@
         width: 30px;
         height: 30px;
         float: left;
-        background-image: url(../imagens/search.png);
+        /*background-image: url(../imagens/search.png);*/
     }
 
     a{
@@ -1301,7 +1301,7 @@
     #pagina_modall{
         width: 100%;
         height: 100%;
-        background-image: url(../imagens/bgpi.jpg);
+        /*background-image: url(../imagens/bgpi.jpg);*/
         background-attachment: fixed;
         padding-top: 30px;
         padding-bottom: 10%;

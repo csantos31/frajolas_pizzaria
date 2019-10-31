@@ -73,11 +73,11 @@
                         </nav>
                     </div>
                     <div id="login">
-                        <input name="txtUser" type="text" value="" placeholder="Usuário">
+                        <input class="inpt" name="txtUser" type="text" value="" placeholder="Usuário">
 
-                        <input name="txtSenha" type="password" value="" placeholder="Senha">
+                        <input class="inpt" name="txtSenha" type="password" value="" placeholder="Senha">
 
-                        <input name="btnLogin" type="submit" value="OK">
+                        <input class="btcy" name="btnLogin" type="submit" value="OK">
                     </div>
                 </div>
             </form>
